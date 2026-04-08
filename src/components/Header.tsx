@@ -19,20 +19,29 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="/" className="text-foreground hover:text-primary transition-colors">
+            <a
+              href="/"
+              className="text-foreground hover:text-primary transition-colors">
               Browse Jobs
             </a>
-            <a href="/dashboard" className="text-foreground hover:text-primary transition-colors">
+            <a
+              href="/dashboard"
+              className="text-foreground hover:text-primary transition-colors">
               Dashboard
             </a>
           </nav>
 
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            <Button variant="ghost">
+            <Button
+              variant="ghost"
+              onClick={() => (window.location.href = "/login")}>
               Sign In
             </Button>
-            <Button className="gradient-primary text-primary-foreground">
+
+            <Button
+              className="gradient-primary text-primary-foreground"
+              onClick={() => (window.location.href = "/signup")}>
               Sign Up
             </Button>
           </div>
@@ -42,8 +51,7 @@ const Header = () => {
             variant="ghost"
             size="icon"
             className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+            onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <Menu className="w-5 h-5" />
           </Button>
         </div>
@@ -52,10 +60,14 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pt-4 border-t">
             <nav className="flex flex-col space-y-4">
-              <a href="/" className="text-foreground hover:text-primary transition-colors">
+              <a
+                href="/"
+                className="text-foreground hover:text-primary transition-colors">
                 Browse Jobs
               </a>
-              <a href="/dashboard" className="text-foreground hover:text-primary transition-colors">
+              <a
+                href="/dashboard"
+                className="text-foreground hover:text-primary transition-colors">
                 Dashboard
               </a>
               <div className="flex flex-col space-y-2 pt-4">
